@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class DevTest {
+import java.util.Scanner;
+
+public class DevTest {
 }
