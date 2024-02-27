@@ -1,4 +1,4 @@
-import java.sql.SQLOutput;
+
 import java.util.Scanner;
 
 public class SafeInput {
@@ -97,6 +97,68 @@ public class SafeInput {
                 System.out.println("You must enter an int: " + trash);
             }
         } while(!done);
+
+        return retVal;
+    }
+
+    //Part E getRangedDouble
+    public static double getRangedDouble(Scanner pipe, String prompt, int low, int high)
+    {
+        double retVal = 0;
+        String trash = "";
+        boolean done = false;
+
+        do
+        {
+            System.out.print("\n" + prompt + "[" + low + "-" + high +"]: ");
+            if(pipe.hasNextDouble())
+            {
+                retVal = pipe.nextDouble();
+                pipe.nextLine();
+                if(retVal >= low && retVal <= high)
+                {
+                    done = true;
+                }
+                else
+                {
+                    System.out.println("\nNumber is out of range [" + low + "-" + high + "]: ");
+                }
+            }
+            else
+            {
+                trash = pipe.nextLine();
+                System.out.println("You must enter a double: " + trash);
+            }
+            return retVal;
+        }
+    }
+
+    //Part F getYNConfirm
+    public static boolean getYNConfirm(Scanner pipe, String prompt)
+    {
+        boolean retVal = true;
+        String response = "";
+        boolean gotAVal = false;
+
+        do
+        {
+            System.out.print("\n" + prompt + " [Y/N] ");
+            response = pipe.nextLine();
+            if(response.equalsIgnoreCase("Y"))
+            {
+                gotAVal = true;
+                retVal = true;
+            }
+            else if(response.equalsIgnoreCase("N"))
+            {
+                gotAVal = true;
+                retVal = false;
+            }
+            else
+            {
+                System.out.println("You must answer [Y/N] " + response );
+            }
+        } while(!gotAVal);
 
         return retVal;
     }
