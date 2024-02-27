@@ -162,4 +162,29 @@ public class SafeInput {
 
         return retVal;
     }
+
+    //Part G getRegExString
+
+    public static String getRegExString(Scanner pipe, String prompt, String regExPattern)
+    {
+        String response = "";
+        boolean gotAVal = false;
+
+        do
+        {
+            System.out.print("\n" + prompt + ": ");
+            response = pipe.nextLine();
+            if(response.matches(regExPattern))
+            {
+                gotAVal = true;
+            }
+            else
+            {
+                System.out.println("\n" + response + " must match the pattern " + regExPattern);;
+                System.out.println("Try again!");
+            }
+        } while(!gotAVal);
+
+        return response;
+    }
 }
