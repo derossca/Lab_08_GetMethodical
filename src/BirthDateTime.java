@@ -14,6 +14,7 @@ public class BirthDateTime {
         //calling SafeInput getRangedInt methods for user prompt and input
         year = SafeInput.getRangedInt(in, "Enter the year you were born: ", 1950, 2015);
         month = SafeInput.getRangedInt(in, "Enter the month you were born: ", 1, 12);
+        //switch selector to limit day range depending on month entered
         switch (month)
         {
             case 2:
@@ -28,6 +29,7 @@ public class BirthDateTime {
         hours = SafeInput.getRangedInt(in, "Enter the hour you were born: ", 1, 24);
         minutes = SafeInput.getRangedInt(in, "Enter the minute you were born: ", 1, 59);
 
+        //output results from input above
         System.out.println("\nYou were born " + year + " - " + month + " - " + day + " at " + hours + ":" + minutes);
     }
 }
