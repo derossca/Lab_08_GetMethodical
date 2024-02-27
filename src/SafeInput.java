@@ -88,7 +88,7 @@ public class SafeInput {
                 }
                 else
                 {
-                    System.out.println("\nNumber is out of range [" + low + "-" + high "]: " +retVal);
+                    System.out.println("\nNumber is out of range [" + low + "-" + high + "]: " +retVal);
                 }
             }
             else
@@ -129,8 +129,9 @@ public class SafeInput {
                 trash = pipe.nextLine();
                 System.out.println("You must enter a double: " + trash);
             }
-            return retVal;
-        }
+        } while(!done);
+
+        return retVal;
     }
 
     //Part F getYNConfirm
