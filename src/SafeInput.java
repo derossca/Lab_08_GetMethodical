@@ -101,7 +101,7 @@ public class SafeInput {
     }
 
     //Part E getRangedDouble
-    public static double getRangedDouble(Scanner pipe, String prompt, int low, int high)
+    public static double getRangedDouble(Scanner pipe, String prompt, double low, double high)
     {
         double retVal = 0;
         String trash = "";
