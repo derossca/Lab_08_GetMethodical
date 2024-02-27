@@ -21,6 +21,6 @@ public class CheckOut {
             doneYN = SafeInput.getYNConfirm(in, "Are you done? Yes or No?");
         } while (!doneYN);
 
-        System.out.println(totalPrice);
+        System.out.printf(totalPrice);
     }
 }
