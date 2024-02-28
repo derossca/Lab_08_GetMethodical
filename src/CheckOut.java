@@ -21,6 +21,7 @@ public class CheckOut {
             doneYN = SafeInput.getYNConfirm(in, "Are you done? Yes or No?");
         } while (!doneYN);
 
-        System.out.printf(totalPrice); //outputs total price after all items are added up
+        //outputs totalPrice of all the items added up
+        System.out.printf("The total cost of the items is " + totalPrice);
     }
 }
