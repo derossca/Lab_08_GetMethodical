@@ -7,24 +7,7 @@ public class DevTest
         Scanner in = new Scanner(System.in);
 
         // you should only have the method here, most of what you did needs to go into the method - I should only see 'prettyHeader("The message"), where the message is something you either hard code or ask from the user via Scanner
-        for(int row = 1; row <= 1; row ++){
-            for(int col = 1; col <= 60; col ++){
-                prettyHeader("*");
-            }
-            System.out.println();
-        }
-        for(int row = 1; row <= 1; row ++){
-            for(int col = 1; col <= 1; col ++){
-                prettyHeader("***                  Message Centered Here               ***");
-            }
-            System.out.println();
-        }
-        for( int row = 1; row <= 1; row ++){
-            for(int col = 1; col <= 60; col ++){
-                prettyHeader("*");
-            }
-            System.out.println();
-        }
+        prettyHeader("");
     }
 //need ***18Message Centered Here18***
 
@@ -38,10 +21,10 @@ public class DevTest
         int CHAR_COUNT = 60;
         //We are going to have 3 *** on each side, that leaves 60 - 6 or 54 spaces a user can use for a message
         //So, 56 whitespace total, but we need it centered - need to determine HOW LONG the message is
-        int totalSpaces = CHAR_COUNT - 6 - message.length;
+        int totalSpaces = CHAR_COUNT - 6 - msg.length();
         //now I need to calculate the spaces to the left and right of the message so I can draw " " for whitespace
-        int leftSpace;
-        int rightSpace;
+        int leftSpace = 18;
+        int rightSpace = 18;
         //but it might be an odd or even number, and that messes up where exactly our center is...
         if(totalSpaces % 2 ++0){ //this is even
             leftSpace = rightSpace = totalSpaces / 2;  //this is the easy one, left and right are equal and half of what our total whitespace is going to be
@@ -54,5 +37,6 @@ public class DevTest
         }
 
         //from here you have the numbers you need to draw whitespace left, then the message, then whitespace right.  The top and bottom of the headers should be easy.  Remember the difference between println and print for console out commands.
+
     }
 }
