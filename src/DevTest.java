@@ -38,12 +38,12 @@ public class DevTest
         int CHAR_COUNT = 60;
         //We are going to have 3 *** on each side, that leaves 60 - 6 or 54 spaces a user can use for a message
         //So, 56 whitespace total, but we need it centered - need to determine HOW LONG the message is
-        int totalSpaces = CHAR_COUNT - 6 - message.length;
+        int totalSpaces = CHAR_COUNT - 6 - msg.length();
         //now I need to calculate the spaces to the left and right of the message so I can draw " " for whitespace
         int leftSpace;
         int rightSpace;
         //but it might be an odd or even number, and that messes up where exactly our center is...
-        if(totalSpaces % 2 ++0){ //this is even
+        if(totalSpaces % 2 == 0){ //this is even
             leftSpace = rightSpace = totalSpaces / 2;  //this is the easy one, left and right are equal and half of what our total whitespace is going to be
         }
         else{

@@ -11,7 +11,9 @@ public class SafeInput {
      */
     public static String getNonZeroLenString(Scanner pipe, String prompt)
     {
+        //declaring variables
         String retString = ""; //Set this to zero length. Loops until it isn't
+        //do while loop to safely input a nonzero length string
         do
         {
             System.out.print("\n" + prompt + ": "); //show prompt add space
@@ -22,12 +24,20 @@ public class SafeInput {
     }
 
     //Part B getInt
+    /**
+     *
+     * @param pipe a Scanner opened to read from System.in
+     * @param prompt prompt for the user
+     * @return an integer and not a double nor string
+     */
     public static int getInt(Scanner pipe, String prompt)
     {
+        //declaring variables
         int retVal = 0;
         String trash = "";
         boolean done = false;
 
+        //do while loop and if else structure to get a safe input of an integer and not something else
         do
         {
             System.out.print("\n" + prompt + ": ");
@@ -44,16 +54,25 @@ public class SafeInput {
             }
         } while(!done);
 
+        //return the value of the input from the scanner
         return retVal;
     }
 
     //Part C getDouble
+    /**
+     *
+     * @param pipe a Scanner opened to read from System.in
+     * @param prompt prompt for the user
+     * @return a double
+     */
     public static double getDouble(Scanner pipe, String prompt)
     {
+        //delcaring variables
         double retVal = 0;
         String trash = "";
         boolean done = false;
 
+        // do while loop and if else structure for safe read in of a double from scanner
         do
         {
             System.out.print("\n" + prompt + ": ");
@@ -70,16 +89,27 @@ public class SafeInput {
             }
         } while(!done);
 
+        //return the value of the double
         return retVal;
     }
 
     //Part D getRangedInt
+    /**
+     *
+     * @param pipe a Scanner opened to read from System.in
+     * @param prompt prompt for the user
+     * @param low sets low of the integer range
+     * @param high sets high of the integer range
+     * @return an integer within specified range from low and high param
+     */
     public static int getRangedInt(Scanner pipe, String prompt, int low, int high)
     {
+        //declaring variables
         int retVal = 0;
         String trash = "";
         boolean done = false;
 
+        //do while loop and nested if else structure to safely read in and validate integer is in range
         do
         {
             System.out.print("\n" + prompt + "[" + low + "-" + high + "]: ");
@@ -103,16 +133,27 @@ public class SafeInput {
             }
         } while(!done);
 
+        //return integer within range
         return retVal;
     }
 
     //Part E getRangedDouble
+    /**
+     *
+     * @param pipe a Scanner opened to read from System.in
+     * @param prompt prompt for the user
+     * @param low sets low end of double range
+     * @param high sets high end of double range
+     * @return a double that is within range set by low and high param
+     */
     public static double getRangedDouble(Scanner pipe, String prompt, double low, double high)
     {
+        //declaring variables
         double retVal = 0;
         String trash = "";
         boolean done = false;
 
+        //do while and nested if else structure to safely read in and validate a double within set range
         do
         {
             System.out.print("\n" + prompt + "[" + low + "-" + high +"]: ");
@@ -136,16 +177,26 @@ public class SafeInput {
             }
         } while(!done);
 
+        //return value of the double within range
         return retVal;
     }
 
     //Part F getYNConfirm
+    /**
+     *
+     * @param pipe a Scanner opened to read from System.in
+     * @param prompt prompt for the user
+     * @return a boolean value that confirms a Y answer to end loop
+     */
     public static boolean getYNConfirm(Scanner pipe, String prompt)
     {
+        //declaring variables
         boolean retVal = true;
         String response = "";
         boolean gotAVal = false;
 
+        //do while loop and if else if structure that prompts user for a Y/N answer, reads in their answer, and ends loop if Y
+        //if N it lets user loop back to do process again
         do
         {
             System.out.print("\n" + prompt + " [Y/N] ");
@@ -166,16 +217,26 @@ public class SafeInput {
             }
         } while(!gotAVal);
 
+        //returns boolean as true to end method
         return retVal;
     }
 
     //Part G getRegExString
+    /**
+     *
+     * @param pipe a Scanner opened to read from System.in
+     * @param prompt prompt for the user
+     * @param regExPattern that allows user to set a regExPattern that must be matched in input
+     * @return a String response that matches the regExPattern inputted
+     */
 
     public static String getRegExString(Scanner pipe, String prompt, String regExPattern)
     {
+        //declaring variables
         String response = "";
         boolean gotAVal = false;
 
+        //do while loop and if else structure that reads in string input and makes it match regExPattern
         do
         {
             System.out.print("\n" + prompt + ": ");
@@ -191,6 +252,7 @@ public class SafeInput {
             }
         } while(!gotAVal);
 
+        //returns the string response so long as regExPattern is matched in the above loop
         return response;
     }
 
