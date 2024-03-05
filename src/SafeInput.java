@@ -257,4 +257,68 @@ public class SafeInput {
     }
 
     //Part H Pretty Header
+    /**
+     *
+     * @param pipe a Scanner opened to read from System.in
+     * @param prompt prompt for the user
+     * @return a String response that will be the centered pretty header
+     */
+
+    public static String prettyHeader(Scanner pipe, String prompt){
+
+        //declaring some variables
+        String msg = "";
+        int CHAR_COUNT = 60;
+        int totalSpaces = 0;
+        int leftSpace = 0;
+        int rightSpace = 0;
+
+
+
+        // do while loop to make message able to be scanned in from user input
+        do{
+            System.out.print("\n" + prompt + ": ");
+            msg = pipe.nextLine();
+        } while (msg.length() == totalSpaces);
+
+
+        totalSpaces = CHAR_COUNT - 6 - msg.length();
+
+        //if else structure to center header based on if it is even or odd
+        if(totalSpaces % 2 == 0){
+            leftSpace = rightSpace = totalSpaces / 2;
+        }
+        else {
+            rightSpace = totalSpaces / 2;
+            leftSpace = rightSpace + 1;
+        }
+
+        //this creates the display for top, center, and bottom rows
+        for(int row = 1; row <= CHAR_COUNT; row ++){
+            System.out.print("*");
+        }
+        System.out.println();
+        //centered msg in middle row
+        for(int row = 1; row <= 1; row ++){
+            System.out.print("***");
+        }
+        for(int row = 1; row <= leftSpace; row ++){
+            System.out.print(" ");
+        }
+        for(int row = 1; row <= 1; row ++){
+            System.out.print(msg);
+        }
+        for(int row = 1; row <= rightSpace; row ++){
+            System.out.print(" ");
+        }
+        for(int row = 1; row <= 1; row ++){
+            System.out.print("***");
+        }
+        System.out.println();
+        //bottom row
+        for(int row = 1; row <= CHAR_COUNT; row ++){
+            System.out.print("*");
+        }
+        return msg;
+    }
 }
