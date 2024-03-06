@@ -67,7 +67,7 @@ public class SafeInput {
      */
     public static double getDouble(Scanner pipe, String prompt)
     {
-        //delcaring variables
+        //declaring variables
         double retVal = 0;
         String trash = "";
         boolean done = false;
@@ -261,7 +261,7 @@ public class SafeInput {
      *
      * @param pipe a Scanner opened to read from System.in
      * @param prompt prompt for the user
-     * @return a String response that will be the centered pretty header
+     * @return msg a String response that will be the centered pretty header
      */
 
     public static String prettyHeader(Scanner pipe, String prompt){
@@ -319,6 +319,7 @@ public class SafeInput {
         for(int row = 1; row <= CHAR_COUNT; row ++){
             System.out.print("*");
         }
+
         return msg;
     }
 }
